@@ -128,7 +128,24 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let groceryList = [];
+  availableItems.forEach( item => {
+    if(item.available) {
+      groceryList.push(item.name);
+    }
+  });
+  return groceryList;
 };
+
+let availableItems = [
+  { name: 'apples', available: true },
+  { name: 'pears', available: true },
+  { name: 'oranges', available: false },
+  { name: 'bananas', available: true },
+  { name: 'blueberries', available: false }
+];
+
+console.log(createList(availableItems));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -146,6 +163,19 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  let outputArr = p[];
+  arr.forEach( item => {
+    if (item%3 ===0 && item%5===0){
+      outputArr.push('Fizz Buzz');
+    } else if(item%5===0){
+      outputArr.push('Buzz');
+    } else if (item%3===0){
+      outputArr.push(Fizz);
+    } else {
+      outputArr.push(item);
+    }
+  });
+  return outputArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
