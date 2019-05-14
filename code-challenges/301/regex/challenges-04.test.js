@@ -14,6 +14,10 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+
+  let regex = /[0-9]/;
+
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,6 +30,10 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex = /[A-Z][A-Za-z]*/g;
+  let arrMatch = str.match(regex);
+
+  return arrMatch;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,6 +44,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /[A-J][A-Za-z]*/g;
+  let result = [];
+  arr.forEach( item => {
+    if (item.match(regex)){
+      result.push(...item.match(regex));
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +68,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  let regex = /^[Oo]ct(ober)?$/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
