@@ -44,11 +44,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /[A-J][A-Za-z]*/g;
+  let regex = /^[A-J]/;
   let result = [];
   arr.forEach( item => {
-    if (item.match(regex)){
-      result.push(...item.match(regex));
+    if (regex.test(item)){
+      result.push(item);
     }
   });
   return result;
@@ -84,6 +84,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let regex = /[A-Za-z0-9]+\s/g;
+
+  let result = str.match(regex);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,10 +102,13 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
+
 let hangman = (str) => {
   // Solution code here...
-};
+  let regex = /[a,e,i,o,u]/gi;
 
+  return str.replace(regex, '_');
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -116,6 +123,9 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  let regex = /[A-za-z]+(ells)/g;
+  let result = str.match(regex);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
