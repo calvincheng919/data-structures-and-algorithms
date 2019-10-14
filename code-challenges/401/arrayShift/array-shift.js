@@ -29,3 +29,4 @@ console.log(insertShiftArray(myArrEven, 99));
 console.log(insertShiftArray(myArrOdd, 99));
 
 
+module.exports = insertShiftArray;
